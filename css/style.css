@@ -69,10 +69,13 @@ ul, ol { list-style: none; }
 
 .section-head {
   display: grid;
-  grid-template-columns: 90px 1fr auto;
+  grid-template-columns: 1fr auto;
   gap: 24px;
   align-items: end;
   margin-bottom: 56px;
+}
+.section-head:has(.section-head__num) {
+  grid-template-columns: 90px 1fr auto;
 }
 .section-head__num {
   font-family: var(--font-display);
@@ -1072,8 +1075,9 @@ html.js-ready .reveal:not(.is-in) { opacity: 0; transform: translateY(26px); }
   color: var(--red);
 }
 @media (max-width: 920px) {
-  .hero--school .hero__content { grid-template-columns: 1fr; }
+  .hero--school .hero__content { grid-template-columns: minmax(0, 1fr); }
   .hero--school .hero__photo img { aspect-ratio: 4 / 5; max-height: 560px; }
+  .hero--school .btn--hero { white-space: normal; width: 100%; }
 }
 .career__photo { max-width: none; margin: 28px 0 0; }
 .career__photo img { aspect-ratio: 4 / 5; max-height: 520px; }
